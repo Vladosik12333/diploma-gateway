@@ -1,0 +1,10 @@
+services:
+  trip-db:
+    image: postgres:18
+    volumes:
+      - ./compose/trip_db:/var/lib/postgresql
+    environment:
+      POSTGRES_PASSWORD: root
+      POSTGRES_DB: trip
+    ports:
+      - "9081:5432"
