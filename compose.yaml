@@ -8,3 +8,12 @@ services:
       POSTGRES_DB: trip
     ports:
       - "9081:5432"
+  plan-db:
+    image: postgres:18
+    volumes:
+      - ./compose/plan_db:/var/lib/postgresql
+    environment:
+      POSTGRES_PASSWORD: root
+      POSTGRES_DB: plan
+    ports:
+      - "9082:5432"
